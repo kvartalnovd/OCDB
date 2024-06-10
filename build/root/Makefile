@@ -14,9 +14,12 @@ build:
 
 .PHONY: run
 run: build
-	@echo "> [$(PROJECT_NAME)][$(START_TIME)] Starting Contracted DataBase"
 	@./bin/${TARGET} --config "${LOCAL_CONFIG}"
-	@echo "> [$(PROJECT_NAME)]["`date +'%y.%m.%d %H:%M:%S'`"] Close the OCDB"
+
+xrun:
+	@echo "[$(PROJECT_NAME)][$(START_TIME)] Starting Contracted DataBase"
+	@make run
+	@echo "[$(PROJECT_NAME)]["`date +'%y.%m.%d %H:%M:%S'`"] Close the OCDB"
 
 .PHONY: test
 test:
